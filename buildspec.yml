@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Installing Node packages
+      - npm install
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - .gitignore
+    - buildspec.yml
+    - node_modules/**/*
+    - index.js
+    - package.json
+    - package-lock.json
+    - README.md
+  discard-paths: no
