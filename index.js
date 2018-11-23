@@ -1,4 +1,4 @@
-// UPDATED
+// UPDATED TODAY
 var mysql = require('mysql');
 var AWS = require('aws-sdk');
 var connection = mysql.createConnection({
@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
 });
 exports.handler = (event, context, callback) => {
     //var message = event.Records[0].Sns.Message;
-    //console.log('Message received from SNS:', message);
+    console.log('Message received from SNS topic:', message);
     connection.query('show slave status;', function (error, results, fields) {
         if (error) {
             connection.destroy();

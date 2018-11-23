@@ -8,6 +8,8 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - zip -r query-db.zip .
+      - aws lambda update-function-code --function-name dbtest1 --zip-file fileb://query-db.zip
 
 artifacts:
   files:
